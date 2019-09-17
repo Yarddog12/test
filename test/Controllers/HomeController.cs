@@ -4,15 +4,20 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using test.Models;
 
 namespace test.Controllers {
 	public class HomeController : Controller {
+
 		public IActionResult Index() {
+		using (var ctx = new DatabaseContext())
+
 			return View();
 		}
 
-		public IActionResult Privacy() {
+		public IActionResult Demo() {
+
 			return View();
 		}
 
