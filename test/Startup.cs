@@ -30,9 +30,9 @@ namespace test {
 			});
 
 
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-			services.AddEntityFrameworkSqlServer()
-				.AddDbContext<DatabaseContext>(option => option.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB;Initial Catalog = lods;Integrated Security = True"));
+		//	services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+		//	services.AddEntityFrameworkSqlServer()
+		//		.AddDbContext<DatabaseContext>(option => option.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB;Initial Catalog = lods;Integrated Security = True"));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
