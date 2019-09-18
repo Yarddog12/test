@@ -11,14 +11,21 @@ namespace test.Controllers {
 	public class HomeController : Controller {
 
 		public IActionResult Index() {
-		using (var ctx = new DatabaseContext())
+
+			
 
 			return View();
 		}
 
 		public IActionResult Demo() {
+			OrgUser org = new OrgUser();
 
-			return View();
+			using (var ctx = new lodsContext()) {
+				org = new OrgUser();
+				org.Organization = ctx.Organization.ToList();
+				org.Users = ctx.Users.ToList();
+			}
+			return View(org);
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

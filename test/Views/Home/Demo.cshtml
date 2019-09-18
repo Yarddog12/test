@@ -1,5 +1,5 @@
 ﻿@using test.Models
-@model OrganizationModel
+@model OrgUser
 
 <h2>Organizations and their users.</h2>
 
@@ -27,29 +27,29 @@
             <th>Edit | Delete</th>
         </tr>
     </thead>
-    @*<tbody>
-        @foreach (var item in Model.CustomerList) {
+    <tbody>
+        @foreach (var item in Model.Organization) {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    @Html.DisplayFor(modelItem => item.Organization1)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Address)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Country)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.City)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Phoneno)
+                    @Html.DisplayFor(modelItem => item.State)
                 </td>
                 <td>
-                    <a asp-page="./EditCustomer" asp-route-id="@item.CustomerID">Edit</a> |
-                    <a asp-page="./AllCustomer" onclick="return confirm('Are you sure you want to delete this item?');" asp-page-handler="Delete" asp-route-id="@item.CustomerID">Delete</a>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td>
+                    <a asp-page="./EditCustomer" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./AllCustomer" onclick="return confirm('Are you sure you want to delete this item?');" asp-page-handler="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
         }
-    </tbody>*@
+    </tbody>
 </table>
